@@ -1,0 +1,58 @@
+!================================================================
+! _   _    ____   ____  __    ___   __ __ ____    ___  ____  __  
+! \\ //    || \\ ||    (( \  // \\  || || || \\  //   ||    (( \ 
+!  )X(     ||_// ||==   \\  ((   )) || || ||_// ((    ||==   \\  
+! // \\    || \\ ||___ \_))  \\_//  \\_// || \\  \\__ ||___ \_)) 
+!                                                                
+!================================================================
+
+st.termname: st-256color 
+
+xterm*faceName: 'DejaVu Sans Mono for Powerline'xft:PragmataPro:size=11:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
+
+URxvt*font:     xft:DejaVu Sans Mono for Powerline:size=11:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
+;URxvt*boldFont: xft:PragmatePro:size=FONTSIZE:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
+URxvt*scrollBar: false
+URxvt*antialias:  true
+!URxvt*transparent: true
+!URxvt*shading: 25
+URxvt*depth: 32
+URxvt*background: rgba:0000/2b00/3600/0000
+
+! special
+*.foreground:   #ffffff
+*.background:   #000000
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #000000
+*.color8:       #555753
+
+! red
+*.color1:       #cc003e
+*.color9:       #cc5e80
+
+! green
+*.color2:       #069a4e
+*.color10:      #65a786
+
+! yellow
+*.color3:       #9fc400
+*.color11:      #bed26b
+
+! blue
+*.color4:       #3465a4
+*.color12:      #688bb7
+
+! magenta
+*.color5:       #6f507b
+*.color13:      #9f7bad
+
+! cyan
+*.color6:       #06989a
+*.color14:      #59abad
+
+! white
+*.color7:       #9ea29b
+*.color15:      #c7c7c6
+
