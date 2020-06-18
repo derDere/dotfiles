@@ -182,5 +182,14 @@ eval "$(dircolors -p | \
     sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
     dircolors /dev/stdin)"
 
+
+# DotFile Management
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
+
+function dotfiles-setup() {
+  echo ".dotfiles.git" >> .gitignore
+  git clone --bare https://github.com/derDere/dotfiles.git $HOME/.dotfiles.git
+  dotfiles checkout
+  dotfiles config --local status.showUntrackedFiles no
+}
 
