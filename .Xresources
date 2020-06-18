@@ -6,7 +6,8 @@
 !                                                                
 !================================================================
 
-st.termname: st-256color 
+!st.termname: st-256color
+st.termname: xterm-256color
 
 xterm*faceName: 'DejaVu Sans Mono for Powerline'xft:PragmataPro:size=11:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
 
