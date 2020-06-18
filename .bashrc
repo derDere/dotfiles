@@ -187,7 +187,7 @@ eval "$(dircolors -p | \
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 
 function dotfiles-setup() {
-  echo ".dotfiles.git" >> .gitignore
+  rm $HOME/.bashrc
   git clone --bare https://github.com/derDere/dotfiles.git $HOME/.dotfiles.git
   dotfiles checkout
   dotfiles config --local status.showUntrackedFiles no
