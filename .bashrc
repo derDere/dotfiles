@@ -116,8 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias mp5=mp-5
-
 function ccppp() {
   printf "SRC = \$(wildcard *.cpp)\nAPP = \"$1\"\n\nAll: \$(APP)\n      #Making\n\n\$(APP): \$(SRC)\n   g++ -o \$(APP) \$(SRC)\n\ntest: \$(APP)\n       ./\$(APP) debug\n" > ./makefile
   printf "#include <iostream>\n\n#define APP \"$1\"\n\nusing namespace std;\n\n/**\n * Project: $1\n * Creator: $USER\n * Creation Date: $(date)\n */\nint main(int argc, char* argv[]) {\n cout << \"Neues Project: \" << APP << endl;\n return 0;\n}\n" > ./main.cpp
@@ -192,4 +190,11 @@ function dotfiles-setup() {
   dotfiles checkout
   dotfiles config --local status.showUntrackedFiles no
 }
+
+# Aliases
+alias em=emacs
+alias ll = "ls -l"
+alias la = "ls -a"
+alias lla = "ls -la"
+alias mp5=mp-5
 
