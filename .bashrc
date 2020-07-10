@@ -192,9 +192,14 @@ function dotfiles-setup() {
 }
 
 # Aliases
-alias em=emacs
-alias ll = "ls -l"
-alias la = "ls -a"
-alias lla = "ls -la"
-alias mp5=mp-5
+alias em="emacs"
+alias ll="ls -l"
+alias la="ls -a"
+alias lla="ls -la"
+alias mp5="mp-5"
+alias cls="clear"
 
+# check if we're running on linux sub system for windows
+if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+    alias docker="docker.exe"
+fi
