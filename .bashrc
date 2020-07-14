@@ -164,7 +164,8 @@ export org=$HOME/Org
 
 
 # Add this to your PATH if it’s not already declared
-export PATH=$PATH:$HOME/.local/bin
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.usr/local/bin"
 
 # Powerline configuration
 if [ -f $HOME/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
