@@ -47,6 +47,7 @@
 ; Setting Emacs Window Alpha
 (set-frame-parameter (selected-frame) 'alpha 98)
 (add-to-list 'default-frame-alist '(alpha . (98 . 98)))
+(set-face-attribute 'default nil :height 91)
 
 
 
@@ -82,7 +83,7 @@
 ; start package.el with emacs
 (require 'package)
 ; add MELPA to repository list
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 ; initialize package.el
 (package-initialize)
 
@@ -386,7 +387,7 @@
  '(line-number-mode nil)
  '(package-selected-packages
    (quote
-    (solarized-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized powerline ac-php ac-math htmlize org-bullets all-the-icons all-the-icons-dired treemacs treemacs-magit dashboard magit hlinum flycheck google-c-style flymake-cursor flymake-google-cpplint iedit neotree auto-complete-c-headers yasnippet-snippets yasnippet auto-complete)))
+    (ox-twbs solarized-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized powerline ac-php ac-math htmlize org-bullets all-the-icons all-the-icons-dired treemacs treemacs-magit dashboard magit hlinum flycheck google-c-style flymake-cursor flymake-google-cpplint iedit neotree auto-complete-c-headers yasnippet-snippets yasnippet auto-complete)))
  '(scroll-bar-mode nil)
  '(tooltip-mode nil)
  '(window-divider-mode nil))
@@ -426,6 +427,7 @@
 ; fixing powerline and theme
 (custom-set-faces
  '(default ((t (:foreground "#eeeeee" :slant normal)))))
+
 ;(setq powerline-color1 "#FF00FF") ;doesent seem to do anything
 ;(setq powerline-color2 "#00FF00") ;doesent seem to do anything
 (set-face-attribute 'mode-line nil

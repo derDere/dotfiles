@@ -58,7 +58,7 @@ bindsym $mod+a exec i3-sensible-terminal -e ranger
 bindsym $mod+g exec ~/.config/i3/google.sh
 
 # start emacs
-bindsym $mid+y exec emacs
+bindsym $mod+y exec emacs
 
 # kill focused window
 bindsym $mod+Shift+q kill
