@@ -342,6 +342,25 @@
 
 
 
+
+; spellcheck
+(setq ispell-program-name "aspell")
+(setq ispell-dictionary "german")
+(setq flyspell-use-meta-tab nil)
+(dolist (hook '(text-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode 1))))
+(dolist (hook '(change-log-mode-hook log-edit-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode -1))))
+(require 'flyspell)
+(define-key flyspell-mode-map (kbd "C-.") 'ispell-word)
+;(add-hook 'flyspell-mode-hook (lambda ()
+;				(global-unset-key (kbd "C-."))
+;				(global-set-key (kbd "C-.") 'ispell-word)))
+;(define-key global-map (kbd "C-.") 'ispell-word)
+
+
+
+
 ; prettyfy org mode
 (add-hook 'org-mode-hook (lambda ()
    "Beautify Org Checkbox Symbol"
@@ -355,10 +374,8 @@
    ;(push '("#+END_SRC" . "└── λ ────────────" ) prettify-symbols-alist)
    ;(push '("-----" . "────────────") prettify-symbols-alist)
    ;(push '("#+RESULTS:" . "#=RESULT:" ) prettify-symbols-alist)
+   (flyspell-mode 1)
    (prettify-symbols-mode)))
-
-
-
 
 
 
@@ -385,6 +402,7 @@
  '(flymake-google-cpplint-command "/usr/local/bin/cpplint")
  '(frame-background-mode (quote light))
  '(line-number-mode nil)
+ '(org-latex-compiler "lualatex")
  '(package-selected-packages
    (quote
     (ox-twbs solarized-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized powerline ac-php ac-math htmlize org-bullets all-the-icons all-the-icons-dired treemacs treemacs-magit dashboard magit hlinum flycheck google-c-style flymake-cursor flymake-google-cpplint iedit neotree auto-complete-c-headers yasnippet-snippets yasnippet auto-complete)))
@@ -424,7 +442,10 @@
 (setq mouse-sel-mode t)
 (setq mouse-wheel-follow-mouse 't)
 
-; fixing powerline and theme
+
+
+
+;fixing powerline and theme ===============
 (custom-set-faces
  '(default ((t (:foreground "#eeeeee" :slant normal)))))
 

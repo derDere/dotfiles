@@ -6,19 +6,23 @@
 !                                                                
 !================================================================
 
+
 !st.termname: st-256color
 st.termname: xterm-256color
 
-xterm*faceName: 'DejaVu Sans Mono for Powerline'xft:PragmataPro:size=11:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
+!xterm*faceName: 'DejaVuSansMono Nerd Font Mono'xft:PragmataPro:size=11:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
 
-URxvt*font:     xft:DejaVu Sans Mono for Powerline:size=11:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
-;URxvt*boldFont: xft:PragmatePro:size=FONTSIZE:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
+URxvt*font:     xft:DejaVuSansMono Nerd Font Mono:size=9:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
+!URxvt*boldFont: xft:PragmatePro:size=FONTSIZE:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
 URxvt*scrollBar: false
 URxvt*antialias:  true
 !URxvt*transparent: true
 !URxvt*shading: 25
 URxvt*depth: 32
 URxvt*background: rgba:0000/2b00/3600/0000
+
+! Default Font
+*font:     DejaVuSansMono Nerd Font Mono:size=9:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
 
 ! special
 *.foreground:   #ffffff
