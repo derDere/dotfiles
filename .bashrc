@@ -199,6 +199,7 @@ alias la="ls -a"
 alias lla="ls -la"
 alias mp5="mp-5"
 alias cls="clear"
+alias l="ls"
 
 # check if we're running on linux sub system for windows
 if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
