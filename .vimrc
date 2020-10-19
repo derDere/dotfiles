@@ -9,9 +9,14 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'preservim/nerdtree'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'junegunn/fzf'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
+Plugin 'airblade/vim-gitgutter'
 
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
-
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -26,6 +31,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+map <C-o> :NERDTreeToggle<CR>
+map ; :FZF<CR>
 
 colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
