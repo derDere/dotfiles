@@ -168,11 +168,12 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.usr/local/bin"
 
 # Powerline configuration
-if [ -f $HOME/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
-    $HOME/.local/bin/powerline-daemon -q
+#if [ -f $HOME/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
+if [ -f `which powerline` ]; then
+    powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
-    source $HOME/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+    . /usr/share/powerline/bindings/bash/powerline.sh
 fi
 
 
