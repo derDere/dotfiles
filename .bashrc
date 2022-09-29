@@ -117,8 +117,8 @@ if ! shopt -oq posix; then
 fi
 
 function ccppp() {
-  printf "SRC = \$(wildcard *.cpp)\nAPP = \"$1\"\n\nAll: \$(APP)\n      #Making\n\n\$(APP): \$(SRC)\n   g++ -o \$(APP) \$(SRC)\n\ntest: \$(APP)\n       ./\$(APP) debug\n" > ./makefile
-  printf "#include <iostream>\n\n#define APP \"$1\"\n\nusing namespace std;\n\n/**\n * Project: $1\n * Creator: $USER\n * Creation Date: $(date)\n */\nint main(int argc, char* argv[]) {\n cout << \"Neues Project: \" << APP << endl;\n return 0;\n}\n" > ./main.cpp
+  printf "SRC = \$(wildcard *.cpp)\nAPP = \"$1\"\n\nAll: \$(APP)\n	@echo Done\n\n\$(APP): \$(SRC)\n	g++ -o \$(APP) \$(SRC)\n\ntest: \$(APP)\n	./\$(APP) debug\n" > ./makefile
+  printf "#include <iostream>\n\n#define APP \"$1\"\n\nusing namespace std;\n\n/**\n * Project: $1\n * Creator: $USER\n * Creation Date: $(date)\n */\nint main(int argc, char* argv[]) {\n  cout << \"Neues Project: \" << APP << endl;\n  return 0;\n}\n" > ./main.cpp
   emacs ./main.cpp
 }
 
@@ -169,7 +169,7 @@ export PATH="$PATH:$HOME/.usr/local/bin"
 
 # Powerline configuration
 #if [ -f $HOME/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
-if [ -f `which powerline` ]; then
+if hash powerline 2> /dev/null; then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
