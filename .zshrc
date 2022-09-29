@@ -158,3 +158,7 @@ function measure-speed() {
   $*
   date +%D\ %T:%N
 }
+
+
+#autoload -U zsh-newuser-install
+#zsh-newuser-install -f
