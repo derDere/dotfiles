@@ -10,5 +10,4 @@ set mouse
 set numbercolor white,black
 set selectedcolor white,blue
 set tabsize 2
-set tabstospaces
 set multibuffer

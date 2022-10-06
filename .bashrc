@@ -116,18 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-function ccppp() {
-  printf "SRC = \$(wildcard *.cpp)\nAPP = \"$1\"\n\nAll: \$(APP)\n	@echo Done\n\n\$(APP): \$(SRC)\n	g++ -o \$(APP) \$(SRC)\n\ntest: \$(APP)\n	./\$(APP) debug\n" > ./makefile
-  printf "#include <iostream>\n\n#define APP \"$1\"\n\nusing namespace std;\n\n/**\n * Project: $1\n * Creator: $USER\n * Creation Date: $(date)\n */\nint main(int argc, char* argv[]) {\n  cout << \"Neues Project: \" << APP << endl;\n  return 0;\n}\n" > ./main.cpp
-  emacs ./main.cpp
-}
-
-function measure-speed() {
-  date +%D\ %T:%N
-  $*
-  date +%D\ %T:%N
-}
-
 #    30: Black
 #    31: Red
 #    32: Green
@@ -159,14 +147,6 @@ function measure-speed() {
 #fi
 
 
-# Add Org Dir Env
-export org=$HOME/Org
-
-
-# Add this to your PATH if it’s not already declared
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.usr/local/bin"
-
 # Powerline configuration
 #if [ -f $HOME/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
 if hash powerline 2> /dev/null; then
@@ -176,33 +156,4 @@ if hash powerline 2> /dev/null; then
     . /usr/share/powerline/bindings/bash/powerline.sh
 fi
 
-
-# remove ls background colors
-eval "$(dircolors -p | \
-    sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
-    dircolors /dev/stdin)"
-
-
-# DotFile Management
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
-
-function dotfiles-setup() {
-  rm $HOME/.bashrc
-  git clone --bare https://github.com/derDere/dotfiles.git $HOME/.dotfiles.git
-  dotfiles checkout
-  dotfiles config --local status.showUntrackedFiles no
-}
-
-# Aliases
-alias em="emacs"
-alias ll="ls -l"
-alias la="ls -a"
-alias lla="ls -la"
-alias mp5="mp-5"
-alias cls="clear"
-alias l="ls"
-
-# check if we're running on linux sub system for windows
-if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
-    alias docker="docker.exe"
-fi
+source "$HOME/.dot-notes/terminal-functions.sh"
