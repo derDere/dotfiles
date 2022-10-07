@@ -1,0 +1,13 @@
+#!sh
+
+projName="$1"
+
+
+makefile="SRC = \$(wildcard *.cpp)\nAPP = \"$projName\"\n\nAll: \$(APP)\n\t@echo Done\n\n\$(APP): \$(SRC)\n\tg++ -o \$(APP) \$(SRC)\n\ntest: \$(APP)\n\t./\$(APP) debug\n"
+
+
+maincpp="#include <iostream>\n\n#define APP \"$projName\"\n\nusing namespace std;\n\n/**\n * Project: $projName\n * Creator: $USER\n * Creation Date: $(date)\n */\nint main(int argc, char* argv[]) {\n\tcout << \"Neues Project: \" << APP << endl;\n\treturn 0;\n}\n"
+
+
+echo $makefile > ./makefile
+echo $maincpp > ./main.cpp

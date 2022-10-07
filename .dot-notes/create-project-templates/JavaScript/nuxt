@@ -1,0 +1,3 @@
+#!sh
+
+yarn create nuxt-app $1

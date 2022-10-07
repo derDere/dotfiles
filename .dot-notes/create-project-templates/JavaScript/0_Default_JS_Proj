@@ -1,0 +1,7 @@
+#!sh
+
+projName="$1"
+
+indexJS="\n/**\n * Project: $projName\n * Creator: $USER\n * Creation Date: $(date)\n */\n\nconsole.log('Neues Projekt: $projName')"
+
+echo $indexJS > ./index.js
