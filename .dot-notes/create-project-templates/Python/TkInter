@@ -1,2 +1,10 @@
 #!sh
-echo "TK"
+
+projectname="$1"
+
+appPy="#!python3\n\n\nimport tkinter as tk\n\n\nclass Application(tk.Tk):\n\t\"\"\"\n\tThe main Application object.\n\t\"\"\"\n\tdef __init__(self, *args, **kwargs):\n\t\ttk.Tk.__init__(self, *args, **kwargs)\n\t\tself.wm_title(\"$projectname\")\n\t\tlabel1 = tk.Label(text=\"Hello, Tkinter\\\\n\\\\nProject: $projectname\")\n\t\tlabel1.pack()"
+
+mainPy="#!python3\n\n\n\"\"\"\nProject: $projectname\nCreator: $USER\nCreation Date: $(date)\n\"\"\"\n\n\nfrom app import Application\n\n\ndef main(argv):\n\tapp = Application()\n\tapp.mainloop()\n\n\nif __name__==\"__main__\":\n\timport sys\n\tif len(sys.argv) > 1:\n\t\tmain(argv[1:])\n\telse:\n\t\tmain([])"
+
+echo "$mainPy" > main.py
+echo "$appPy" > app.py

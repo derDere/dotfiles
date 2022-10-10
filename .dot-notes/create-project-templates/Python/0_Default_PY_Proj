@@ -1,2 +1,7 @@
 #!sh
-echo "Test123"
+
+projectname="$1"
+
+mainPy="#!python3\n\n\n\"\"\"\nProject: $projectname\nCreator: $USER\nCreation Date: $(date)\n\"\"\"\n\n\ndef main(argv):\n\tprint(\"New Project: $projectname\")\n\n\nif __name__==\"__main__\":\n\timport sys\n\tif len(sys.argv) > 1:\n\t\tmain(sys.argv[1:])\n\telse:\n\t\tmain([])"
+
+echo "$mainPy" > main.py

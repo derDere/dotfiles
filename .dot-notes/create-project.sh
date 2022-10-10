@@ -1,6 +1,7 @@
 #!sh
 
-# 
+rm -f "$HOME/.dot-notes/create-project-templates/.last"
+
 projectname="$1"
 
 if [ -z "$projectname" ]; then
@@ -54,7 +55,7 @@ case "$LANG" in
 esac
 
 if [ -z "$DIR" ]; then
-	dialog --msgbox "\n    ERROR\!\n\nNo directory specified for this language\!" 10 40
+	dialog --clear --msgbox "\n    ERROR\!\n\nNo directory specified for this language\!" 10 40
 	return
 fi
 
