@@ -27,6 +27,7 @@ alias ccp="create-project"
 if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
     alias docker="docker.exe"
     alias node="node.exe"
+    export DISPLAY=:0
 fi
 
 
