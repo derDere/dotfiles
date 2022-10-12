@@ -82,7 +82,7 @@ ZSH_AUTOSUGGEST_STRATEGY="completion"
 plugins=(
 		git
 		#docker
-		zsh-autosuggestions
+		#zsh-autosuggestions
 		#extract
 		#web-search
 		#git-extras
