@@ -8,15 +8,27 @@ from random import choice
 
 def main(argv):
 	cmds = {
-		"asciiquarium": "asciiquarium",
-		"cmatrix": "cmatrix -s",
-		"pipes.sh": "pipes.sh"
+		"asciiquarium": [
+			"asciiquarium"
+		],
+		"cmatrix": [
+			"cmatrix -s -C green",
+			"cmatrix -s -C blue",
+			"cmatrix -s -C cyan",
+			"cmatrix -s -C red",
+			"cmatrix -s -C yellow",
+			"cmatrix -s -C white"
+		],
+		"pipes.sh": [
+			"pipes.sh",
+			"pipes.sh -p 10 -r 0 -R"
+		],
 	}
 	ss = []
 	for key in cmds:
 		if os.system("hash %s 2>/dev/null" % key) == 0:
 			ss.append(cmds[key])
-	os.system(choice(ss))
+	os.system(choice(choice(ss)))
 
 
 if __name__=="__main__":
