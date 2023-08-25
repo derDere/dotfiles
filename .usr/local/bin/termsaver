@@ -23,6 +23,10 @@ def main(argv):
 			"pipes.sh",
 			"pipes.sh -p 10 -r 0 -R"
 		],
+		"cgol": [
+		  "cgol -s",
+		  "cgol -s -a"
+		]
 	}
 	ss = []
 	for key in cmds:
