@@ -63,3 +63,9 @@ function measure-speed() {
 eval "$(dircolors -p | \
     sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
     dircolors /dev/stdin)"
+
+# tux fortune
+function fortune-tux() {
+	fortune | figlet -f small -w 180 | cowsay -n -f tux | center.sh | lolcat
+}
+fortune-tux | center.sh | lolcat
