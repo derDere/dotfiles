@@ -66,6 +66,6 @@ eval "$(dircolors -p | \
 
 # tux fortune
 function fortune-tux() {
-	fortune | figlet -f small -w 180 | cowsay -n -f tux | center.sh | lolcat
+	fortune | cowsay -n -f tux | center.sh | lolcat
 }
 fortune-tux | center.sh | lolcat
