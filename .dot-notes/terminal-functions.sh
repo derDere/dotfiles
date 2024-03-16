@@ -1,5 +1,5 @@
-
 #########################################################################
+
 
 # DotFile Management
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
@@ -64,8 +64,13 @@ eval "$(dircolors -p | \
     sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
     dircolors /dev/stdin)"
 
+
 # tux fortune
 function fortune-tux() {
 	fortune | cowsay -n -f tux | center.sh | lolcat
 }
 fortune-tux | center.sh | lolcat
+
+
+# load private data from unmanaged file
+source "$HOME/.private-env/exports.sh"
