@@ -1,0 +1,12 @@
+
+
+[FORMAT]
+max-line-length=150
+indent-string="  "
+
+[DESIGN]
+max-args=10
+max-statements=200
+
+[MESSAGES CONTROL]
+disable=E0611, E1101, E0401, W0703
