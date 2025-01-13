@@ -69,7 +69,6 @@ eval "$(dircolors -p | \
 function fortune-tux() {
 	fortune | cowsay -n -f tux | center.sh | lolcat
 }
-fortune-tux | center.sh | lolcat
 
 
 # load private data from unmanaged file

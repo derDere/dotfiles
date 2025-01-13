@@ -6,6 +6,38 @@ import time
 from random import choice
 
 
+def get_snow_options():
+  all = []
+
+  snow_pile = [None, '--stack=pile']
+  snow_color = [None, "--color=blue", "--color=cyan", "--color=green", "--color=magenta", "--color=red", "--color=yellow", "--color=rainbow"]
+
+  for sp in snow_pile:
+    for sc in snow_color:
+      a = []
+      if sp: a += [sp]
+      if sc: a+= [sc]
+      all += ["snow " + (" ".join(a))]
+
+  tree_color = [None, '--color=blue', '--color=cyan', '--color=white', '--color=magenta', '--color=red', '--color=yellow', '--color=rainbow']
+  tree_lights_color = [None, '--lights-color=blue', '--lights-color=cyan', '--lights-color=white', '--lights-color=green', '--lights-color=magenta', '--lights-color=red', '--lights-color=yellow']
+  tree_snow_color = [None, '--snow-color=blue', '--snow-color=cyan', '--snow-color=white', '--snow-color=magenta', '--snow-color=red', '--snow-color=yellow', '--snow-color=rainbow']
+  tree_star = [None, '--star=classic', '--star=diamond', '--star=patrick']
+
+  for tc in tree_color:
+    for tlc in tree_lights_color:
+      for tsc in tree_snow_color:
+        for ts in tree_star:
+          a = []
+          if tc: a += [tc]
+          if tlc: a += [tlc]
+          if tsc: a += [tsc]
+          if ts: a += [ts]
+          all += ["tree " + (" ".join(a))]
+
+  return [ f"screen bash -c 'tput civis; snowmachine {a}; exit'" for a in all ]
+
+
 def main(argv):
 	cmds = {
 		"asciiquarium": [
@@ -26,7 +58,8 @@ def main(argv):
 		"cgol": [
 		  "cgol -s",
 		  "cgol -s -a"
-		]
+		],
+		"snowmachine": get_snow_options()
 	}
 	ss = []
 	for key in cmds:

@@ -157,4 +157,5 @@ if hash powerline 2> /dev/null; then
 fi
 
 source "$HOME/.dot-notes/terminal-functions.sh"
+
 . "$HOME/.cargo/env"
