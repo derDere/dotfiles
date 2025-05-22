@@ -3,7 +3,7 @@ mkdir $HOME/Downloads
 cd $HOME/Downloads
 wget https://triptico.com/download/mp-5.tar.gz
 tar -xf mp-5.tar.gz
-cd $HOME/Downloads/mp-5.46/
+cd $HOME/Downloads/mp-5.62/
 sudo apt-get install -y make gcc libncursesw5-dev
 ./config.sh
 make
