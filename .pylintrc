@@ -1,7 +1,7 @@
 
 
 [FORMAT]
-max-line-length=150
+max-line-length=250
 indent-string="  "
 
 [DESIGN]
@@ -9,4 +9,4 @@ max-args=10
 max-statements=200
 
 [MESSAGES CONTROL]
-disable=E0611, E1101, E0401, W0703
+disable=E0611, E1101, E0401, W0703, C0209

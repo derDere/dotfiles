@@ -21,6 +21,8 @@ alias mp5="mp-5"
 alias cls="clear"
 alias l="ls"
 alias ccp="create-project"
+alias py="python3"
+alias rcd="rangercd"
 
 
 # check if we're running on linux sub system for windows
@@ -63,6 +65,20 @@ function measure-speed() {
 eval "$(dircolors -p | \
     sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
     dircolors /dev/stdin)"
+
+
+# cd using ranger
+function rangercd() {
+    TMP_FILE_OUT=$(mktemp)
+    ranger --show-only-dirs --choosedir="$TMP_FILE_OUT"
+    if [ "$?" -eq "0" ]; then
+        TARGET_PATH=$(cat "$TMP_FILE_OUT")
+        rm -f "$TMP_FILE_OUT"
+        cd "$TARGET_PATH"
+    else
+        echo Error
+    fi
+}
 
 
 # tux fortune

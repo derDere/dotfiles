@@ -151,3 +151,5 @@ fortune-tux
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
