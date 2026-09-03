@@ -93,3 +93,4 @@ source "$HOME/.private-env/exports.sh"
 
 #enable true color support
 export COLORTERM=truecolor
+export CLAUDE_CODE_TMUX_TRUECOLOR=1
