@@ -89,3 +89,7 @@ function fortune-tux() {
 
 # load private data from unmanaged file
 source "$HOME/.private-env/exports.sh"
+
+
+#enable true color support
+export COLORTERM=truecolor
